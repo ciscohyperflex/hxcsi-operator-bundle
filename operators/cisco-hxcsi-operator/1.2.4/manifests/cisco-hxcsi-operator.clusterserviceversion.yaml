@@ -1,3 +1,4 @@
+---
 apiVersion: operators.coreos.com/v1alpha1
 kind: ClusterServiceVersion
 metadata:
@@ -15,35 +16,29 @@ metadata:
             "autoscaling": {},
             "fullnameOverride": "",
             "hx": {
-              
-              # clientId uniquely identifies a certain Tenant. 
-              # This field is mandatory and the token generated includes this clientId. 
-              # The clientId should be same as the one specified when generating API access token. 
+              # clientId uniquely identifies a certain Tenant.
+              # This field is mandatory and the token generated includes this clientId.
+              # The clientId should be same as the one specified when generating API access token.
               "clientId": "INPUT_VALUE_HERE",
-              
-              # The name of the internal or external image registry 
-              # where all the HXCSI and Sidecar container images are stored. 
+              # The name of the internal or external image registry
+              # where all the HXCSI and Sidecar container images are stored.
               "dockerRegistryName": "INPUT_VALUE_HERE",
-              
-              # The HXDP Storage VIP which handles iscsiadm sessions. 
+              # The HXDP Storage VIP which handles iscsiadm sessions.
               "iscsiUrl": "INPUT_VALUE_HERE",
-              
-              # The API token to authenticate with the HXDP cluster. 
-              # The token should be provided in raw format (not base64 encoded) 
-              # To get the Access Token: 
-              #   sudo docker run -it quay.io/hxcsiadmin/servicetoken:latest -clientId <client_id> -mgmtvip x.x.x.x -username <hx-username> 
-              #   Enter: <hx-password> 
-              # Example ServiceToken generated: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1c2Vycy9hZG1pbiIsInVzZXIiOiJhZG1pbiIsImNsaWVudGlkIjoibXlDbGllbnQ 
-              #                                 xMjMiLCJpc3N1ZWRBdCI6MTYzNjU4ODcxNTY2MSwidG9rZW5MaWZlVGltZSI6LTEsImh5cGVydmlzb3IiOiJFc3gifQ.4voy 
-              #                                 J7sNBJJnpr2QREWHCd57xxMo5wjLCWWq3Ys_3A0 
-              # 
-              # You must have specified the same 'clientId' when this token was generated. 
-              # The token obtained is already in the raw format. 
+              # The API token to authenticate with the HXDP cluster.
+              # The token should be provided in raw format (not base64 encoded)
+              # To get the Access Token:
+              #   sudo docker run -it quay.io/hxcsiadmin/servicetoken:latest -clientId <client_id> -mgmtvip x.x.x.x -username <hx-username>
+              #   Enter: <hx-password>
+              # Example ServiceToken generated: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1c2Vycy9hZG1pbiIsInVzZXIiOiJhZG1pbiIsImNsaWVudGlkIjoibXlDbGllbnQ
+              #                                 xMjMiLCJpc3N1ZWRBdCI6MTYzNjU4ODcxNTY2MSwidG9rZW5MaWZlVGltZSI6LTEsImh5cGVydmlzb3IiOiJFc3gifQ.4voy
+              #                                 J7sNBJJnpr2QREWHCd57xxMo5wjLCWWq3Ys_3A0
+              #
+              # You must have specified the same 'clientId' when this token was generated.
+              # The token obtained is already in the raw format.
               "token": "INPUT_VALUE_HERE",
-              
-              # The MGMT VIP of the HXDP cluster which fields API calls. 
+              # The MGMT VIP of the HXDP cluster which fields API calls.
               "url": "INPUT_VALUE_HERE"
-
             },
             "image": {
               "attacher": "hxcsi-csi-attacher:3.2.1-cisco1",
@@ -127,7 +122,7 @@ spec:
           version: rbac.authorization.k8s.io/v1
         - kind: RoleBinding
           name: ''
-          version: rbac.authorization.k8s.io/v1 
+          version: rbac.authorization.k8s.io/v1
       # Shows the following fields in the 'Form view' when creating the HXCSI Driver.
       specDescriptors:
         - description: >-
@@ -233,8 +228,8 @@ spec:
 
     - Dynamic creation and deletion of volumes
 
-    - Dynamic volume attach and detach 
-    
+    - Dynamic volume attach and detach
+
     - Block access support
 
     - CHAP support for iSCSI sessions
