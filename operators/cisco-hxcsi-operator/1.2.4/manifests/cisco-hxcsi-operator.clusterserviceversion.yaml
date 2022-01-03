@@ -16,28 +16,10 @@ metadata:
             "autoscaling": {},
             "fullnameOverride": "",
             "hx": {
-              # clientId uniquely identifies a certain Tenant.
-              # This field is mandatory and the token generated includes this clientId.
-              # The clientId should be same as the one specified when generating API access token.
               "clientId": "INPUT_VALUE_HERE",
-              # The name of the internal or external image registry
-              # where all the HXCSI and Sidecar container images are stored.
               "dockerRegistryName": "INPUT_VALUE_HERE",
-              # The HXDP Storage VIP which handles iscsiadm sessions.
               "iscsiUrl": "INPUT_VALUE_HERE",
-              # The API token to authenticate with the HXDP cluster.
-              # The token should be provided in raw format (not base64 encoded)
-              # To get the Access Token:
-              #   sudo docker run -it quay.io/hxcsiadmin/servicetoken:latest -clientId <client_id> -mgmtvip x.x.x.x -username <hx-username>
-              #   Enter: <hx-password>
-              # Example ServiceToken generated: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1c2Vycy9hZG1pbiIsInVzZXIiOiJhZG1pbiIsImNsaWVudGlkIjoibXlDbGllbnQ
-              #                                 xMjMiLCJpc3N1ZWRBdCI6MTYzNjU4ODcxNTY2MSwidG9rZW5MaWZlVGltZSI6LTEsImh5cGVydmlzb3IiOiJFc3gifQ.4voy
-              #                                 J7sNBJJnpr2QREWHCd57xxMo5wjLCWWq3Ys_3A0
-              #
-              # You must have specified the same 'clientId' when this token was generated.
-              # The token obtained is already in the raw format.
               "token": "INPUT_VALUE_HERE",
-              # The MGMT VIP of the HXDP cluster which fields API calls.
               "url": "INPUT_VALUE_HERE"
             },
             "image": {
@@ -182,6 +164,101 @@ spec:
           x-descriptors:
             - 'urn:alm:descriptor:com.tectonic.ui:imagePullPolicy'
             - 'urn:alm:descriptor:com.tectonic.ui:fieldGroup:Optional'
+        - description: full name override
+          displayName: Full Name Override
+          path: fullnameOverride
+          x-descriptors:
+            - 'urn:alm:descriptor:com.tectonic.ui:label'
+        - description: ingress
+          displayName: ingress
+          path: ingress
+          x-descriptors:
+            - 'urn:alm:descriptor:com.tectonic.ui:label'
+        - description: serviceAccount
+          displayName: serviceAccount
+          path: serviceAccount
+          x-descriptors:
+            - 'urn:alm:descriptor:com.tectonic.ui:label'
+        - description: serviceAccount
+          displayName: serviceAccount
+          path: serviceAccount
+          x-descriptors:
+            - 'urn:alm:descriptor:com.tectonic.ui:label'
+        - description: image
+          displayName: image
+          path: image
+          x-descriptors:
+            - 'urn:alm:descriptor:com.tectonic.ui:label'
+        - description: service
+          displayName: service
+          path: service
+          x-descriptors:
+            - 'urn:alm:descriptor:com.tectonic.ui:label'
+        - description: tolerations
+          displayName: tolerations
+          path: tolerations
+          x-descriptors:
+            - 'urn:alm:descriptor:com.tectonic.ui:label'
+        - description: affinity
+          displayName: affinity
+          path: affinity
+          x-descriptors:
+            - 'urn:alm:descriptor:com.tectonic.ui:label'
+        - description: hx
+          displayName: hx
+          path: hx
+          x-descriptors:
+            - 'urn:alm:descriptor:com.tectonic.ui:label'
+        - description: nameOverride
+          displayName: name override
+          path: nameOverride
+          x-descriptors:
+            - 'urn:alm:descriptor:com.tectonic.ui:label'
+        - description: podAnnotations
+          displayName: podAnnotations
+          path: podAnnotations
+          x-descriptors:
+            - 'urn:alm:descriptor:com.tectonic.ui:label'
+        - description: storageClass
+          displayName: storage class
+          path: storageClass
+          x-descriptors:
+            - 'urn:alm:descriptor:com.tectonic.ui:label'
+        - description: securityContext
+          displayName: securityContext
+          path: securityContext
+          x-descriptors:
+            - 'urn:alm:descriptor:com.tectonic.ui:label'
+        - description: autoscaling
+          displayName: autoscaling
+          path: autoscaling
+          x-descriptors:
+            - 'urn:alm:descriptor:com.tectonic.ui:label'
+        - description: imagePullSecrets
+          displayName: imagePullSecrets
+          path: imagePullSecrets
+          x-descriptors:
+            - 'urn:alm:descriptor:com.tectonic.ui:label'
+        - description: nodeSelector
+          displayName: nodeSelector
+          path: nodeSelector
+          x-descriptors:
+            - 'urn:alm:descriptor:com.tectonic.ui:label'
+        - description: podSecurityContext
+          displayName: podSecurityContext
+          path: podSecurityContext
+          x-descriptors:
+            - 'urn:alm:descriptor:com.tectonic.ui:label'
+        - description: replicaCount
+          displayName: replicaCount
+          path: replicaCount
+          x-descriptors:
+            - 'urn:alm:descriptor:com.tectonic.ui:label'
+        - description: resources
+          displayName: resources
+          path: resources
+          x-descriptors:
+            - 'urn:alm:descriptor:com.tectonic.ui:label'
       statusDescriptors:
         - description: HXCSI Driver Helm release status
           displayName: Conditions
@@ -193,6 +270,11 @@ spec:
           path: deployedRelease
           x-descriptors:
             - 'urn:alm:descriptor:text'
+        - description: status of each resource of HXCSI
+          displayName: Pod Status
+          path: pods
+          x-descriptors:
+            - 'urn:alm:descriptor:com.tectonic.ui:podStatuses'
       version: v2
   description: >
 
