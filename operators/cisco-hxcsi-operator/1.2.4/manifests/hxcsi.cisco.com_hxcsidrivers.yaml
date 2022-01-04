@@ -4,10 +4,10 @@ kind: CustomResourceDefinition
 metadata:
   creationTimestamp: null
   name: hxcsidrivers.hxcsi.cisco.com
-  # if custom namespace is to be used for deployment then appropriate SCC (SecurityContextConstraints) should be added to Service Accounts using these commands 
-  # oc adm policy add-scc-to-user hxcsiscc -z csi-nodeplugin -n namespace-name 
-  # oc adm policy add-scc-to-user hxcsiscc -z csi-provisioner -n namespace-name 
-  # Cisco HXCSI Operator is already creating SCC with name hxcsiscc 
+  # if custom namespace is to be used for deployment then appropriate SCC (SecurityContextConstraints) should be added to Service Accounts using these commands
+  # oc adm policy add-scc-to-user hxcsiscc -z csi-nodeplugin -n namespace-name
+  # oc adm policy add-scc-to-user hxcsiscc -z csi-provisioner -n namespace-name
+  # Cisco HXCSI Operator is already creating SCC with name hxcsiscc
   # namespace: namespace-name
 spec:
   group: hxcsi.cisco.com
