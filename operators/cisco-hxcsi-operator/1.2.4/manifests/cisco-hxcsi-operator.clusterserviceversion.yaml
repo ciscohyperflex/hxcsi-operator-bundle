@@ -1,3 +1,4 @@
+---
 apiVersion: operators.coreos.com/v1alpha1
 kind: ClusterServiceVersion
 metadata:
@@ -15,17 +16,11 @@ metadata:
             "autoscaling": {},
             "fullnameOverride": "",
             "hx": {
-              
               "clientId": "INPUT_VALUE_HERE",
-              
               "dockerRegistryName": "INPUT_VALUE_HERE",
-              
               "iscsiUrl": "INPUT_VALUE_HERE",
-              
               "token": "INPUT_VALUE_HERE",
-              
               "url": "INPUT_VALUE_HERE"
-
             },
             "image": {
               "attacher": "hxcsi-csi-attacher:3.2.1-cisco1",
