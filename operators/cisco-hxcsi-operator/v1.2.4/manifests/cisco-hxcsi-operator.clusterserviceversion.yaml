@@ -1,4 +1,3 @@
----
 apiVersion: operators.coreos.com/v1alpha1
 kind: ClusterServiceVersion
 metadata:
@@ -19,8 +18,9 @@ metadata:
               "clientId": "INPUT_VALUE_HERE",
               "dockerRegistryName": "INPUT_VALUE_HERE",
               "iscsiUrl": "INPUT_VALUE_HERE",
-              "token": "INPUT_VALUE_HERE",
+              token": "INPUT_VALUE_HERE",
               "url": "INPUT_VALUE_HERE"
+
             },
             "image": {
               "attacher": "hxcsi-csi-attacher:3.2.1-cisco1",
@@ -57,7 +57,7 @@ metadata:
     capabilities: Seamless Upgrades
     categories: "Storage"
     description: Cisco HXCSI Plugin for RedHat OpenShift Platform
-    createdAt: Tue Dec 21 23:37:02 PST 2021
+    createdAt: Wed Jan  5 01:15:45 PST 2022
     containerImage: quay.io/hxcsiadmin/hxcsi-helm-bundle:1.2.4
     support: tac@cisco.com
     repository: https://quay.io/hxcsiadmin/hxcsi-helm-bundle
@@ -104,7 +104,7 @@ spec:
           version: rbac.authorization.k8s.io/v1
         - kind: RoleBinding
           name: ''
-          version: rbac.authorization.k8s.io/v1
+          version: rbac.authorization.k8s.io/v1 
       # Shows the following fields in the 'Form view' when creating the HXCSI Driver.
       specDescriptors:
         - description: >-
@@ -164,101 +164,6 @@ spec:
           x-descriptors:
             - 'urn:alm:descriptor:com.tectonic.ui:imagePullPolicy'
             - 'urn:alm:descriptor:com.tectonic.ui:fieldGroup:Optional'
-        - description: full name override
-          displayName: Full Name Override
-          path: fullnameOverride
-          x-descriptors:
-            - 'urn:alm:descriptor:com.tectonic.ui:label'
-        - description: ingress
-          displayName: ingress
-          path: ingress
-          x-descriptors:
-            - 'urn:alm:descriptor:com.tectonic.ui:label'
-        - description: serviceAccount
-          displayName: serviceAccount
-          path: serviceAccount
-          x-descriptors:
-            - 'urn:alm:descriptor:com.tectonic.ui:label'
-        - description: serviceAccount
-          displayName: serviceAccount
-          path: serviceAccount
-          x-descriptors:
-            - 'urn:alm:descriptor:com.tectonic.ui:label'
-        - description: image
-          displayName: image
-          path: image
-          x-descriptors:
-            - 'urn:alm:descriptor:com.tectonic.ui:label'
-        - description: service
-          displayName: service
-          path: service
-          x-descriptors:
-            - 'urn:alm:descriptor:com.tectonic.ui:label'
-        - description: tolerations
-          displayName: tolerations
-          path: tolerations
-          x-descriptors:
-            - 'urn:alm:descriptor:com.tectonic.ui:label'
-        - description: affinity
-          displayName: affinity
-          path: affinity
-          x-descriptors:
-            - 'urn:alm:descriptor:com.tectonic.ui:label'
-        - description: hx
-          displayName: hx
-          path: hx
-          x-descriptors:
-            - 'urn:alm:descriptor:com.tectonic.ui:label'
-        - description: nameOverride
-          displayName: name override
-          path: nameOverride
-          x-descriptors:
-            - 'urn:alm:descriptor:com.tectonic.ui:label'
-        - description: podAnnotations
-          displayName: podAnnotations
-          path: podAnnotations
-          x-descriptors:
-            - 'urn:alm:descriptor:com.tectonic.ui:label'
-        - description: storageClass
-          displayName: storage class
-          path: storageClass
-          x-descriptors:
-            - 'urn:alm:descriptor:com.tectonic.ui:label'
-        - description: securityContext
-          displayName: securityContext
-          path: securityContext
-          x-descriptors:
-            - 'urn:alm:descriptor:com.tectonic.ui:label'
-        - description: autoscaling
-          displayName: autoscaling
-          path: autoscaling
-          x-descriptors:
-            - 'urn:alm:descriptor:com.tectonic.ui:label'
-        - description: imagePullSecrets
-          displayName: imagePullSecrets
-          path: imagePullSecrets
-          x-descriptors:
-            - 'urn:alm:descriptor:com.tectonic.ui:label'
-        - description: nodeSelector
-          displayName: nodeSelector
-          path: nodeSelector
-          x-descriptors:
-            - 'urn:alm:descriptor:com.tectonic.ui:label'
-        - description: podSecurityContext
-          displayName: podSecurityContext
-          path: podSecurityContext
-          x-descriptors:
-            - 'urn:alm:descriptor:com.tectonic.ui:label'
-        - description: replicaCount
-          displayName: replicaCount
-          path: replicaCount
-          x-descriptors:
-            - 'urn:alm:descriptor:com.tectonic.ui:label'
-        - description: resources
-          displayName: resources
-          path: resources
-          x-descriptors:
-            - 'urn:alm:descriptor:com.tectonic.ui:label'
       statusDescriptors:
         - description: HXCSI Driver Helm release status
           displayName: Conditions
@@ -270,11 +175,6 @@ spec:
           path: deployedRelease
           x-descriptors:
             - 'urn:alm:descriptor:text'
-        - description: status of each resource of HXCSI
-          displayName: Pod Status
-          path: pods
-          x-descriptors:
-            - 'urn:alm:descriptor:com.tectonic.ui:podStatuses'
       version: v2
   description: >
 
@@ -310,8 +210,8 @@ spec:
 
     - Dynamic creation and deletion of volumes
 
-    - Dynamic volume attach and detach
-
+    - Dynamic volume attach and detach 
+    
     - Block access support
 
     - CHAP support for iSCSI sessions
@@ -366,12 +266,6 @@ spec:
           - update
           - watch
         - apiGroups:
-          - security.openshift.io
-          resources:
-          - securitycontextconstraints
-          verbs:
-          - '*'
-        - apiGroups:
           - rbac.authorization.k8s.io
           resources:
           - clusterrolebindings
@@ -379,10 +273,9 @@ spec:
           verbs:
           - '*'
         - apiGroups:
-          - apps
+          - security.openshift.io
           resources:
-          - daemonsets
-          - statefulsets
+          - securitycontextconstraints
           verbs:
           - '*'
         - apiGroups:
@@ -399,6 +292,13 @@ spec:
           resources:
           - rolebindings
           - roles
+          verbs:
+          - '*'
+        - apiGroups:
+          - apps
+          resources:
+          - daemonsets
+          - statefulsets
           verbs:
           - '*'
         - apiGroups:
