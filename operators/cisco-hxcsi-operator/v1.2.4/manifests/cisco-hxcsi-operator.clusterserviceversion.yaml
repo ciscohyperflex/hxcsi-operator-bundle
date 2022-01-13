@@ -58,7 +58,7 @@ metadata:
     categories: "Storage"
     description: Cisco HXCSI Plugin for RedHat OpenShift Platform
     createdAt: Tue Dec 21 23:37:02 PST 2021
-    containerImage: quay.io/hxcsiadmin/hxcsi-helm-bundle@sha256:d1946e115903f8541f61ce51f601c0a49d26120181dc966c68b0c348ddb66e1f
+    containerImage: quay.io/hxcsiadmin/hxcsi-helm-bundle:1.2.4
     support: tac@cisco.com
     repository: https://quay.io/hxcsiadmin/hxcsi-helm-bundle
     operators.operatorframework.io/builder: operator-sdk-v1.9.0+git
