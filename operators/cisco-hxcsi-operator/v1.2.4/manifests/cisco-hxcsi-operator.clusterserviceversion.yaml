@@ -167,93 +167,54 @@ spec:
         - description: full name override
           displayName: Full Name Override
           path: fullnameOverride
-          x-descriptors:
-            - 'urn:alm:descriptor:com.tectonic.ui:label'
         - description: ingress
           displayName: ingress
           path: ingress
-          x-descriptors:
-            - 'urn:alm:descriptor:com.tectonic.ui:label'
         - description: serviceAccount
           displayName: serviceAccount
           path: serviceAccount
-          x-descriptors:
-            - 'urn:alm:descriptor:com.tectonic.ui:label'
-        - description: serviceAccount
-          displayName: serviceAccount
-          path: serviceAccount
-          x-descriptors:
-            - 'urn:alm:descriptor:com.tectonic.ui:label'
         - description: image
           displayName: image
           path: image
-          x-descriptors:
-            - 'urn:alm:descriptor:com.tectonic.ui:label'
         - description: service
           displayName: service
           path: service
-          x-descriptors:
-            - 'urn:alm:descriptor:com.tectonic.ui:label'
         - description: tolerations
           displayName: tolerations
           path: tolerations
-          x-descriptors:
-            - 'urn:alm:descriptor:com.tectonic.ui:label'
         - description: affinity
           displayName: affinity
           path: affinity
-          x-descriptors:
-            - 'urn:alm:descriptor:com.tectonic.ui:label'
         - description: hx
           displayName: hx
           path: hx
-          x-descriptors:
-            - 'urn:alm:descriptor:com.tectonic.ui:label'
         - description: nameOverride
           displayName: name override
           path: nameOverride
-          x-descriptors:
-            - 'urn:alm:descriptor:com.tectonic.ui:label'
         - description: podAnnotations
           displayName: podAnnotations
           path: podAnnotations
-          x-descriptors:
-            - 'urn:alm:descriptor:com.tectonic.ui:label'
         - description: storageClass
           displayName: storage class
           path: storageClass
-          x-descriptors:
-            - 'urn:alm:descriptor:com.tectonic.ui:label'
         - description: securityContext
           displayName: securityContext
           path: securityContext
-          x-descriptors:
-            - 'urn:alm:descriptor:com.tectonic.ui:label'
         - description: autoscaling
           displayName: autoscaling
           path: autoscaling
-          x-descriptors:
-            - 'urn:alm:descriptor:com.tectonic.ui:label'
         - description: imagePullSecrets
           displayName: imagePullSecrets
           path: imagePullSecrets
-          x-descriptors:
-            - 'urn:alm:descriptor:com.tectonic.ui:label'
         - description: nodeSelector
           displayName: nodeSelector
           path: nodeSelector
-          x-descriptors:
-            - 'urn:alm:descriptor:com.tectonic.ui:label'
         - description: podSecurityContext
           displayName: podSecurityContext
           path: podSecurityContext
-          x-descriptors:
-            - 'urn:alm:descriptor:com.tectonic.ui:label'
         - description: replicaCount
           displayName: replicaCount
           path: replicaCount
-          x-descriptors:
-            - 'urn:alm:descriptor:com.tectonic.ui:label'
         - description: resources
           displayName: resources
           path: resources
